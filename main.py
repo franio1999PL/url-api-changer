@@ -3,11 +3,15 @@ load_dotenv()
 import os
 import MySQLdb
 import requests
+
+API_URL_SHORTENER = os.getenv("API_URL")
+API_KEY_SHORTENER = os.getenv("API_KEY")
+
 # Funkcja do skracania URL
 def shorten_url(long_url):
-    api_url = "https://short.mlodemalzenstwa.pl/api/create-link"
+    api_url = API_URL_SHORTENER
     headers = {
-        'api-key': 'F1R2A3N4E5K',
+        'api-key': API_KEY_SHORTENER,
         'Content-Type': 'application/json'
     }
     data = {
